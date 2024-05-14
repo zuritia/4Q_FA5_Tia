@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Q4FA5_2</title>
+</head>
+    <script>
+        window.onload = function() {
+            generateShape();
+        };
+
+        function generateShape() {
+            var userinput;
+            do {
+                userinput = prompt("Enter a number:");
+            } while (isNaN(userinput));
+
+            var number = parseInt(userinput);
+
+            var output = "Number inputted: " + number + "<br>";
+
+            if (number % 2 === 0) {
+                for (var x = number; x >= 1; x--) {
+                    for (var y = x; y >= 1; y--) {
+                        output += x + " ";
+                    }
+                    output += "<br>";
+                }
+            } else {
+                for (var x = number; x >= 1; x--) {
+                    for (var y = number; y >= 1; y--) {
+                        output += x + " ";
+                    }
+                    output += "<br>";
+                }
+            }
+
+            document.getElementById("output").innerHTML = output;
+        }
+    </script>
+</head>
+    <div id="output"></div>
+</body>
+</html>
+</body>
+</html>

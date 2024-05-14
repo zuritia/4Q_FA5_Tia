@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Q4FA5_2</title>
+</head>
+<body>
+    <label for="name">Enter a name:</label><br><br>
+    <input type="text" id="contactArea" placeholder="Type Here">
+    <button onclick="add()">Add</button>
+    <button onclick="remove()">Remove</button>
+    
+    <p id="d"></p>
+    
+    <script>
+        var contactlist = [];
+    
+        function add() {
+
+            var contact = document.getElementById("contactArea").value;
+            if (contactlist.length < 7) { contactlist.push(contact);} 
+            else { contactlist.push(contact);
+                contactlist.shift(); }
+
+            display();
+        }
+    
+        function remove() {
+
+                if (contactlist.length > 0) { contactlist.pop();
+
+                display();
+            }
+        }
+    
+        function display() { document.getElementById("d").innerText = contactlist.join(" "); }
+    </script>
+    
+</body>
+</html>
